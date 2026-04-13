@@ -16,6 +16,7 @@ html {
 #skills, #certificates, #contact {
   background: #000;
 }
+/* NAVBAR */
 
 .navbar {
   position: sticky;
@@ -36,14 +37,55 @@ html {
   color: black;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: coral;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+/* MOBILE */
+
+ul {
+  padding-left: 20px;
+}
+
 .navbar-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;             
+  justify-content: center;
+  align-items: center;
   gap: 30px;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 220px;
+    background: #111;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px;
+    gap: 20px;
+    transition: 0.3s;
+  }
+
+  .navbar-nav.active {
+    left: 0;
+  }
 }
 
 .nav-link {
@@ -53,15 +95,31 @@ html {
   padding: 8px 14px;  
   border-radius: 6px;
   transition: all 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .nav-link:hover {
   background-color: coral;
   color: black;
+  transform: translateY(-2px);
 }
 
 .nav-link:active {
   color: grey;
+}
+
+.navbar.scrolled .nav-link:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 h1, h2, h3, p, ul {                            
@@ -84,20 +142,11 @@ section > *:not(:last-child) {
   margin-bottom: 15px;
 }
 
-ul {
-  padding-left: 20px;
-}
-
-.navbar.scrolled .nav-link:hover {
+#about, #skills, #projects, #contact, #resume, #footer {
   color: white;
 }
 
-@media (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
+/* HOME SECTION */
 
 #home {
   display: flex;
@@ -120,6 +169,8 @@ ul {
   margin-top: 10px;
   color: coral;
 }
+
+/* ABOUT SECTION */
 
 #about {
   padding: 80px 20px;
@@ -156,6 +207,8 @@ ul {
 #about span {
   color: coral;
 }
+
+/* SKILLS SECTION */
 
 #skills {
   position: relative;
@@ -236,6 +289,9 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* PROJECTS SECTION */
+
 #projects{
   background: #0a0a0a;
 }
@@ -317,6 +373,8 @@ ul {
   }
 }
 
+/* RESUME SECTION */
+
 #resume h2 {
   font-size: 40px;
   color:coral;
@@ -352,6 +410,8 @@ ul {
   transform: translateY(-3px);
   box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
 }
+
+/* CERTIFICATES SECTION */
 
 #certificates {
   text-align: center;
@@ -427,9 +487,7 @@ ul {
   }
 }
 
-.contact-info {
-  margin-top: 20px;
-}
+/* CONTACT SECTION */
 
 #contact {
   text-align: center;
@@ -438,6 +496,11 @@ ul {
 #contact p{
   color:coral
 }
+
+.contact-info {
+  margin-top: 20px;
+}
+
 .contact-info a {
   font-size: 18px;
   color: white;
@@ -467,11 +530,11 @@ ul {
 #contact span {
   color: coral;
 }
+
+/* FOOTER */
+
 #footer {
   text-align: center;
   padding: 20px;
   color: #888;
-}
-#about, #skills, #projects, #contact, #resume, #footer {
-  color: white;
 }
