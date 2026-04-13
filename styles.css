@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: #000;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -48,28 +49,35 @@ html {
 .nav-link {
   text-decoration: none;
   color: coral;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  transition: 0.3s;
+  font-size: 16px;
+  padding: 8px 14px;  
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-  color: white;
+  background-color: coral;
+  color: black;
 }
 
 .nav-link:active {
   color: grey;
 }
 
-
-h1, h2, h3, p, ul {
+h1, h2, h3, p, ul {                            
+                                          
   margin: 0;
 }
 
 section {
-  padding: 40px 20px;
+  padding: 80px 20px;
   max-width: 1200px;
   margin: auto;
+}
+
+section h2 {
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 section > *:not(:last-child) {
@@ -86,9 +94,8 @@ ul {
 
 @media (max-width: 768px) {
   .navbar-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -103,14 +110,12 @@ ul {
 }
 
 #home h1 {
-  font-family: 'Poppins', sans-serif;
   font-size: 75px;
   font-weight: bold;
   color: white;
 }
 
 #home p {
-  font-family: 'Inter', sans-serif;
   font-size: 23px;
   margin-top: 10px;
   color: coral;
@@ -123,14 +128,12 @@ ul {
 }
 
 #about h2 {
-  font-family: 'Poppins', sans-serif;
   font-size: 40px;
   color: white;
   margin-bottom: 20px;
 }
 
 #about p {
-  font-family: Verdana, sans-serif;
   font-size: 18px;
   color: white;
   max-width: 700px;
@@ -174,11 +177,9 @@ ul {
 }
 
 #skills h2 {
-  font-family: 'Poppins', sans-serif;
   font-size: 40px;
   color: white;
   margin-bottom: 20px;
-  padding: 80px 20px;
   text-align: center;
 }
   .skills-container {
@@ -199,8 +200,6 @@ ul {
   border-radius: 15px;
   border: 1px solid rgba(255,255,255,0.08);
   transition: all 0.4s ease;
-  font-family: 'Poppins', sans-serif;
-
   min-height: 220px;
   display: flex;
   flex-direction: column;
@@ -240,6 +239,7 @@ ul {
 #projects{
   background: #0a0a0a;
 }
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -247,13 +247,11 @@ ul {
   max-width: 1200px;
   margin: 40px auto;
 }
+
 #projects h2 {
-  font-family: 'Poppins', sans-serif;
   font-size: 40px;
   color: white;
-  padding: 80px 20px;
   text-align: center;
-  margin-top: 60px;
   margin-bottom: 30px;
 }
 
@@ -264,9 +262,7 @@ ul {
   border: 1px solid rgba(255,255,255,0.08);
   text-align: center;
   transition: all 0.4s ease;
-}
-.project-card h3 {
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
 }
 
 .project-img {
@@ -282,7 +278,6 @@ ul {
 }
 
 .project-card p {
-  font-family: Verdana, sans-serif;
   color: #ccc;
   font-size: 14px;
   margin-bottom: 15px;
@@ -293,22 +288,21 @@ ul {
   object-fit:cover;
 }
 
-.project-buttons {
+.project-links {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-.project-buttons button {
+.project-links a {
   padding: 8px 15px;
-  border: none;
   background: coral;
   color: black;
-  cursor: pointer;
+  text-decoration: none;
   border-radius: 5px;
   transition: 0.3s;
 }
 
-.project-buttons button:hover {
+.project-links a:hover {
   background: white;
 }
 
@@ -317,19 +311,13 @@ ul {
   box-shadow: 0 0 20px rgba(255, 111, 97, 0.3);
 }
 
-@media (max-width: 900px) {
-  .projects-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .projects-container {
     grid-template-columns: 1fr;
   }
 }
+
 #resume h2 {
-  font-family: 'Poppins', sans-serif;
   font-size: 40px;
   color:coral;
   margin-bottom: 20px;
@@ -340,14 +328,12 @@ ul {
 
 #resume {
   text-align: center;
-  padding: 100px 20px;
   background: #0a0a0a;
 }
 .resume-container p {
   color: #ccc;
   font-size: 18px;
   margin-bottom: 20px;
-  font-family: Verdana, sans-serif;
 }
 
 .resume-btn {
@@ -359,7 +345,6 @@ ul {
   border-radius: 8px;
   font-size:14px;
   transition: 0.3s;
-  font-family: Verdana, sans-serif;
 }
 
 .resume-btn:hover {
@@ -369,15 +354,14 @@ ul {
 }
 
 #certificates {
-  padding: 100px 20px;
   text-align: center;
+  padding: 80px 20px;
 }
 
 #certificates h2 {
-  font-family: 'Poppins', sans-serif;
   font-size: 40px;
   color: coral;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .cert-container {
@@ -394,7 +378,6 @@ ul {
   border-radius: 15px;
   border: 1px solid rgba(255,255,255,0.08);
   transition: all 0.4s ease;
-  font-family: 'Verdana', sans-serif; 
   width: 300px;
   padding: 30px 25px;
   display: flex;    
@@ -443,20 +426,25 @@ ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.contact-info {
+  margin-top: 20px;
+}
+
 #contact {
-  padding: 120px 20px;
   text-align: center;
+  padding: 80px 20px;
 }
 #contact p{
   color:coral
 }
 .contact-info a {
-  display: block;
   font-size: 18px;
   color: white;
   text-decoration: none;
-  margin-bottom: 20px;
   transition: 0.3s;
+  display: inline-block;
+  margin: 10px;
 }
 .contact-info a {
   position: relative;
@@ -470,25 +458,18 @@ ul {
   color: grey;
 }
 #contact h2{
-  font-family: 'Poppins', sans-serif;
   font-size: 40px;
   color:white;
   margin-bottom: 20px;
-  padding: 80px 20px;
   text-align: center;
 }
 
-#contact h3,
-#contact p {
-  font-family: Verdana, sans-serif;
-}
 #contact span {
   color: coral;
 }
 #footer {
   text-align: center;
   padding: 20px;
-  font-family: Verdana, sans-serif;
   color: #888;
 }
 #about, #skills, #projects, #contact, #resume, #footer {
