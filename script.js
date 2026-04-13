@@ -1,4 +1,8 @@
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+const overlay = document.getElementById("overlay");
 const navbar = document.querySelector(".navbar");
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
@@ -7,16 +11,20 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("nav-menu");
-
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
+  overlay.classList.toggle("active");   // ADD THIS
+});
+
+overlay.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");   // ADD THIS
 });
 
 document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("click", () => {
     menu.classList.remove("active");
+    overlay.classList.remove("active"); // ADD THIS
   });
 });
 

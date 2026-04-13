@@ -27,15 +27,16 @@ html {
   padding: 15px 0;
   z-index: 1000;
 }
-
+ul{
+  list-style: none;
+}
 .navbar-nav {
-  display: flex;                 
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  transition: all 0.3s ease;
+  box-shadow: 5px 0 20px rgba(0,0,0,0.5);
 }
 
 .nav-link {
@@ -45,6 +46,8 @@ html {
   padding: 8px 14px;
   border-radius: 6px;
   transition: 0.3s;
+  display: block;
+  width: 100%;
 }
 
 .nav-link:hover {
@@ -69,32 +72,58 @@ html {
   left: 20px;
   top: 15px;
   cursor: pointer;
+  z-index: 2000;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
   .menu-toggle {
     display: block;
+    font-size: 28px;
+    color: coral;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 1100;
   }
 
   .navbar-nav {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 220px;
+    left: -100%; 
     height: 100vh;
+    width: 220px;
     background: #111;
+
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     padding: 80px 20px;
     gap: 20px;
-    transition: 0.3s;
+
+    transition: left 0.3s ease;
   }
 
   .navbar-nav.active {
-    left: 0;
+    left: 0;   /* slide in */
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 900; 
+}
+
+.overlay.active {
+  display: block;
 }
 
 h1, h2, h3, p, ul {                            
