@@ -13,18 +13,18 @@ window.addEventListener("scroll", () => {
 
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
-  overlay.classList.toggle("active");   // ADD THIS
+  overlay.classList.toggle("active"); 
 });
 
 overlay.addEventListener("click", () => {
   menu.classList.remove("active");
-  overlay.classList.remove("active");   // ADD THIS
+  overlay.classList.remove("active"); 
 });
 
 document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("click", () => {
     menu.classList.remove("active");
-    overlay.classList.remove("active"); // ADD THIS
+    overlay.classList.remove("active"); 
   });
 });
 
