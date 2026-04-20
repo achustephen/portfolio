@@ -23,7 +23,6 @@ document.querySelectorAll(".nav-link").forEach(link => {
     overlay.classList.remove("active"); 
   });
 });
-
 // 1. Explore box model & how values are written for margin, and padding, in CSS.
 // 2. What units can be used with window.scrollY?
 // 3. Why use sticky positioning for the navbar? Why not use fixed positioning?

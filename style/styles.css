@@ -109,9 +109,11 @@ ul{
     gap: 20px;
     transition: left 0.3s ease;
   }
+
   .navbar.scrolled .nav-link {
     color: coral;
   }
+
   .navbar-nav.active {
     left: 0; 
   }
@@ -214,6 +216,7 @@ section > *:not(:last-child) {
   background: coral;
   margin: 10px auto;
 }
+
 #about span {
   color: coral;
 }
