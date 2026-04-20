@@ -2,10 +2,21 @@ const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("nav-menu");
 const overlay = document.getElementById("overlay");
 const navbar = document.querySelector(".navbar");
+//let ticking = false;
 
 window.addEventListener("scroll", () => {
   navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
+
+/*window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });*/
 
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
