@@ -1,22 +1,57 @@
+const structure= {
+  "name": "Portfolio",
+  "type": "folder",
+  "children": [
+     {
+      "name": "index.html",
+      "type": "file"
+    },
+    {
+      "name": "achu_stephen.pdf",
+      "type": "file"
+    },
+    {
+      "name": "script.js",
+      "type": "file"
+    },
+    {
+      "name": "style",
+      "type": "folder",
+      "children": [
+        {
+          "name": "styles.css",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "images",
+      "type": "folder",
+      "children": [
+        {
+          "name": "icrasst.png",
+          "type": "file"
+        },
+        {
+          "name": "port-img.png",
+          "type": "file"
+        }
+      ]
+    }
+  ]
+};
+   
+const jsonString = JSON.stringify(structure);
+console.log(jsonString);
+
 const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("nav-menu");
 const overlay = document.getElementById("overlay");
 const navbar = document.querySelector(".navbar");
-//let ticking = false;
 
 window.addEventListener("scroll", () => {
   navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
-
-/*window.addEventListener("scroll", () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-      ticking = false;
-    });
-    ticking = true;
-  }
-}, { passive: true });*/
 
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
@@ -34,6 +69,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
     overlay.classList.remove("active"); 
   });
 });
+
 // 1. Explore box model & how values are written for margin, and padding, in CSS.
 // 2. What units can be used with window.scrollY?
 // 3. Why use sticky positioning for the navbar? Why not use fixed positioning?
